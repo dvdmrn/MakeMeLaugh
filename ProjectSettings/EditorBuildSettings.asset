@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 47dd1593694577349bc3b672d948d77b
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 75b7287d2d291714a8d0c8565c2fe72d
+  - enabled: 1
+    path: Assets/Scenes/Conor_FaceDetector.unity
+    guid: 86e084820386324499b64fb3b9684188
+  - enabled: 1
+    path: Assets/Scenes/Help.unity
+    guid: b4df6f586f605454193ee14f065eaad0
   m_configObjects: {}
