@@ -15,6 +15,10 @@ public class FaceDetector : MonoBehaviour
     OpenCvSharp.Rect detectedFace;
     private Renderer _renderer;
 
+    public RectTransform canvasTransform;
+    public Transform trackPoint;
+    private Matrix4x4 normalizationMatrix;
+
     void Start()
     {
         WebCamDevice[] devices = WebCamTexture.devices;
@@ -25,6 +29,8 @@ public class FaceDetector : MonoBehaviour
         faceCascade = new CascadeClassifier(Application.dataPath + @"/haarcascade_frontalface_default.xml");
         smileCascade = new CascadeClassifier(Application.dataPath + @"/haarcascade_smile.xml");
 
+        this.canvasTransform = gameObject.GetComponentInParent<RectTransform>();
+        this.normalizationMatrix = Matrix4x4.Translate(new Vector3(resWidth/2, resHeight/2, 0)) * Matrix4x4.Scale(new Vector3(resWidth, resHeight, 1));
     }
 
     // Update is called once per frame
@@ -34,6 +40,12 @@ public class FaceDetector : MonoBehaviour
         Mat frame = OpenCvSharp.Unity.TextureToMat(_webCamTexture);
         findNewFace(frame);
         display(frame);
+
+        if (detectedFace != null) {
+            var rescaleMatrix = Matrix4x4.Scale(new Vector3(canvasTransform.rect.width, canvasTransform.rect.height, 1));
+            var center = detectedFace.Center;
+            trackPoint.position = (rescaleMatrix * normalizationMatrix).MultiplyVector(new Vector3(center.X, center.Y, 0));
+        }
     }
 
 
