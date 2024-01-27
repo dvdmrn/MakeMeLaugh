@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using OpenCvSharp;
 
+
 public class FaceDetector : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -67,3 +68,4 @@ public class FaceDetector : MonoBehaviour
         GetComponent<Renderer>().material.mainTexture = newTexture;
     }
 }
+
