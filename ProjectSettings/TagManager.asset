@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< Updated upstream
   tags: []
+=======
+  tags:
+  - EnemySmile
+  - EnemyGrump
+  - Enemy
+  - Frown
+  - Smile
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

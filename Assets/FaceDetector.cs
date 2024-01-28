@@ -6,6 +6,13 @@ using OpenCvSharp;
 public class FaceDetector : MonoBehaviour
 {
     // Start is called before the first frame update
+<<<<<<< Updated upstream
+=======
+    public static bool isSmiling = false;
+
+    public int resWidth;
+    public int resHeight;
+>>>>>>> Stashed changes
     WebCamTexture _webCamTexture;
     CascadeClassifier faceCascade;
     CascadeClassifier smileCascade;
@@ -54,10 +61,18 @@ public class FaceDetector : MonoBehaviour
             // If smiles are detected, log and mark the face as smiling
             if (smiles.Length > 0)
             {
+<<<<<<< Updated upstream
                 Debug.Log("Smile detected!");
+=======
+                isSmiling = true;
+                // Debug.Log("Smile detected!");
+>>>>>>> Stashed changes
                 Cv2.PutText(frame, "Smiling", new Point(detectedFace.X, detectedFace.Y + detectedFace.Height + 40),
                     HersheyFonts.HersheySimplex, 3, new Scalar(255, 255, 255), 2);
-            }
+            } else {
+            // Reset the isSmiling variable when no smile is detected
+            isSmiling = false;
+        }
         }
     }
 
