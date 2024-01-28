@@ -13,6 +13,6 @@ public class StretchToCanvas : MonoBehaviour {
     }
 
     public void Update() {
-        transform.localScale = new Vector3(parentCanvasTransform.rect.width, parentCanvasTransform.rect.height, 1);
+        transform.localScale = new Vector3(-parentCanvasTransform.rect.width, parentCanvasTransform.rect.height, 1);
     }
 }

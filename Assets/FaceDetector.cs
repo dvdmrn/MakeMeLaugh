@@ -30,7 +30,7 @@ public class FaceDetector : MonoBehaviour
         smileCascade = new CascadeClassifier(Application.dataPath + @"/haarcascade_smile.xml");
 
         this.canvasTransform = gameObject.GetComponentInParent<RectTransform>();
-        this.normalizationMatrix = Matrix4x4.Translate(new Vector3(resWidth/2, resHeight/2, 0)) * Matrix4x4.Scale(new Vector3(resWidth, resHeight, 1));
+        this.normalizationMatrix = Matrix4x4.Translate(new Vector3(resWidth/2, resHeight/2, 0)) * Matrix4x4.Scale(new Vector3(-1f/resWidth, -1f/resHeight, 1));
     }
 
     // Update is called once per frame
@@ -44,14 +44,13 @@ public class FaceDetector : MonoBehaviour
         if (detectedFace != null) {
             var rescaleMatrix = Matrix4x4.Scale(new Vector3(canvasTransform.rect.width, canvasTransform.rect.height, 1));
             var center = detectedFace.Center;
-            trackPoint.position = (rescaleMatrix * normalizationMatrix).MultiplyVector(new Vector3(center.X, center.Y, 0));
-        }
+            trackPoint.localPosition = new Vector3((center.X - resWidth/2.5f) * -(canvasTransform.rect.width / resWidth), (center.Y - resHeight/2.2f) * -(canvasTransform.rect.height / resHeight));        }
     }
 
 
     void findNewFace(Mat frame)
     {
-        var faces = faceCascade.DetectMultiScale(frame, 1.1, 2, HaarDetectionType.ScaleImage);
+        var faces = faceCascade.DetectMultiScale(frame, 1.7, 2, HaarDetectionType.ScaleImage);
         if (faces.Length >= 1)
         {
             detectedFace = faces[0];
