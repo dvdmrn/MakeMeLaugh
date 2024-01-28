@@ -43,6 +43,13 @@ public class PlayerHealth : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
     print($"collided with: {other}");
+    if (other.tag == "Wall") {
+            wallHit.Play();
+        }
+        else {
+            monsterHit.Play();
+        }
+        
     if(other.gameObject.tag == "Enemy") {
         OnTakingDamage();
     }
