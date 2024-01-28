@@ -7,6 +7,8 @@ using OpenCvSharp;
 public class FaceDetector : MonoBehaviour
 {
     // Start is called before the first frame update
+    public static bool isSmiling = false;
+
     public int resWidth;
     public int resHeight;
     WebCamTexture _webCamTexture;
@@ -74,11 +76,15 @@ public class FaceDetector : MonoBehaviour
             // If smiles are detected, log and mark the face as smiling
             if (smiles.Length > 0)
             {
-                Debug.Log(smiles.Length);
-                // Debug.Log("Smile detected!");
+
+                isSmiling = true;
+
                 Cv2.PutText(frame, "Smiling", new Point(detectedFace.X, detectedFace.Y + detectedFace.Height + 40),
                     HersheyFonts.HersheySimplex, 3, new Scalar(255, 255, 255), 2);
-            }
+            } else {
+            // Reset the isSmiling variable when no smile is detected
+            isSmiling = false;
+        }
         }
     }
 

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - EnemySmile
   - EnemyGrump
+  - Enemy
+  - Frown
+  - Smile
   - Wall
   layers:
   - Default

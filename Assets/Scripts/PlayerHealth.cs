@@ -7,10 +7,8 @@ public delegate void OnTakeDamage();
 
 public class PlayerHealth : MonoBehaviour
 {
-    public AudioSource wallHit;
-    public AudioSource monsterHit;
-
     public static event Action TakeDamage;
+    public static event Action TakeSmiles;
 
     public void OnTakingDamage()
     {
@@ -18,15 +16,49 @@ public class PlayerHealth : MonoBehaviour
         TakeDamage?.Invoke();
     }
 
+    public void OnSmile()
+    {
+        if (FaceDetector.isSmiling)
+        {
+            TakeSmiles?.Invoke();
+        } else {
+            TakeDamage?.Invoke();
+        }
+
+
+    }
+    public void OnDoNotSmile()
+    {
+        if (FaceDetector.isSmiling)
+        {
+            TakeDamage?.Invoke();
+        } else {
+            TakeSmiles?.Invoke();
+        }
+
+
+    }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Wall") {
+    print($"collided with: {other}");
+    if (other.tag == "Wall") {
             wallHit.Play();
         }
         else {
             monsterHit.Play();
         }
+        
+    if(other.gameObject.tag == "Enemy") {
+        OnTakingDamage();
     }
+    if(other.gameObject.tag == "Smile") {
+        OnSmile();
+    } 
+    if(other.gameObject.tag == "Frown") {
+        OnDoNotSmile();
+    }
+    }
+
 }
