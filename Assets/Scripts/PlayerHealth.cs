@@ -19,6 +19,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        OnTakingDamage();
+        // OnTakingDamage();
     }
 }

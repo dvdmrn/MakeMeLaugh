@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EnemySmile
   - EnemyGrump
+  - Wall
   layers:
   - Default
   - TransparentFX
