@@ -11,3 +11,4 @@ public class Enemy : MonoBehaviour
                 transform.position += new Vector3(-speed, Mathf.Sin(Time.time * freq * Mathf.PI), 0);
         }
 }
+
