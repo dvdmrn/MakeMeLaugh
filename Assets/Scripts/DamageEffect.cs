@@ -10,7 +10,8 @@ public class DamageEffect : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        var go = Instantiate(emitterPrefab, transform.position, Quaternion.identity);
+        var go = Instantiate(emitterPrefab, new Vector3(transform.position.x, transform.position.y, -5), Quaternion.identity);
+        
         go.transform.parent = level;
     }
 
