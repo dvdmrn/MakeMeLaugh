@@ -22,8 +22,10 @@ public class SpawnWalls : MonoBehaviour
     {
         _levelScroll = GetComponent<LevelScroll>();
         _randWalkY = 100;
-        _floorFloor = -Mathf.Floor(Screen.height/4f);
-        _ceilCeil = -_floorFloor - headSpaceBuffer;        
+        // _floorFloor = -Mathf.Floor(Screen.height/4f);
+        _floorFloor = -120;
+        // _ceilCeil = -_floorFloor - headSpaceBuffer;
+        _ceilCeil = 120;
         StartCoroutine(nameof(SpawnLoop));
     }
 
@@ -35,7 +37,7 @@ public class SpawnWalls : MonoBehaviour
             _randWalkY = Mathf.CeilToInt(Mathf.Clamp(_randWalkY + Random.Range(-100f, 100f), _floorFloor, floorCeiling));
 
             float lastCeilPos = _yPosCeil;
-            _yPosCeil = _randWalkY +  Mathf.FloorToInt(Random.Range(headSpaceBuffer, - _floorFloor));
+            _yPosCeil = _randWalkY +  (int)Mathf.Clamp(Mathf.Floor(Random.Range(headSpaceBuffer, - _floorFloor)), 0, _ceilCeil);
             
             float yDiffFloor = lastFloorPos - _randWalkY;
             float yDiffCeil = lastCeilPos  - _yPosCeil;
