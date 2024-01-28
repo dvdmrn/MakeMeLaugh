@@ -528,8 +528,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1156153312}
   - {fileID: 1272295556}
@@ -563,7 +563,7 @@ MonoBehaviour:
   wall: {fileID: 4472313772914093443, guid: b2b0d90c338f62842a0a62c2f839380b, type: 3}
   hurtBox: {fileID: 2696868447921581563, guid: 955542ad9542e4241a7ee908fc24157b, type: 3}
   xSpawnPoint: 200
-  headSpaceBuffer: 200
+  headSpaceBuffer: 100
   floorCeiling: 0
 --- !u!54 &380880097
 Rigidbody:
