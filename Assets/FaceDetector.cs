@@ -57,7 +57,7 @@ public class FaceDetector : MonoBehaviour
         if (faces.Length >= 1)
         {
             detectedFace = faces[0];
-            Debug.Log(detectedFace.Location);
+            // Debug.Log(detectedFace.Location);
 
             // Extract the region of interest (ROI) for smile detection
             Mat faceROI = frame[detectedFace];
@@ -67,14 +67,15 @@ public class FaceDetector : MonoBehaviour
             Cv2.CvtColor(faceROI, faceGray, ColorConversionCodes.BGR2GRAY);
 
             // Detect smiles in the face ROI
-            var smiles = smileCascade.DetectMultiScale(faceGray, 1.7, 20);
+            var smiles = smileCascade.DetectMultiScale(faceGray, 1.1, 8);
             if (detectedFace != null) {
                 frame.Rectangle(detectedFace, new Scalar(250,0,0),2);
             }
             // If smiles are detected, log and mark the face as smiling
             if (smiles.Length > 0)
             {
-                Debug.Log("Smile detected!");
+                Debug.Log(smiles.Length);
+                // Debug.Log("Smile detected!");
                 Cv2.PutText(frame, "Smiling", new Point(detectedFace.X, detectedFace.Y + detectedFace.Height + 40),
                     HersheyFonts.HersheySimplex, 3, new Scalar(255, 255, 255), 2);
             }
