@@ -7,6 +7,8 @@ public delegate void OnTakeDamage();
 
 public class PlayerHealth : MonoBehaviour
 {
+    public AudioSource monsterHit;
+    public AudioSource wallHit;
     public static event Action TakeDamage;
     public static event Action TakeSmiles;
 

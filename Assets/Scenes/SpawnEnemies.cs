@@ -29,7 +29,7 @@ IEnumerator EnemyDrop() {
         // to get transform as the objets transform, for the size to be smaller
         enemyObj.transform.SetParent(transform);
         enemyObj.transform.position = new Vector3(100, 0,0);
-        enemyObj.transform.localScale = new Vector3(50,50,50);
+        enemyObj.transform.localScale = new Vector3(1,1,1);
         yield return new WaitForSeconds(Random.Range(3,6));
     }
 }
