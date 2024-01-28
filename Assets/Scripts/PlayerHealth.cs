@@ -7,6 +7,9 @@ public delegate void OnTakeDamage();
 
 public class PlayerHealth : MonoBehaviour
 {
+    public AudioSource wallHit;
+    public AudioSource monsterHit;
+
     public static event Action TakeDamage;
 
     public void OnTakingDamage()
@@ -19,6 +22,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // OnTakingDamage();
+        if (other.tag == "Wall") {
+            wallHit.Play();
+        }
+        else {
+            monsterHit.Play();
+        }
     }
 }
