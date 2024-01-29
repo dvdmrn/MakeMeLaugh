@@ -7,7 +7,7 @@ public class ButtonPlay : MonoBehaviour
 {
     private void OnMouseUpAsButton(){
         Debug.Log("Play Button was pressed!");
-        SceneManager.LoadScene("mainLevel+continuousLines");
+        SceneManager.LoadScene("MAIN_LEVEL");
         Debug.Log("Load Main Game Screen.");
     }
 }
