@@ -34,7 +34,7 @@ public class SpawnWalls : MonoBehaviour
         while (true)
         {
             float lastFloorPos = _randWalkY;
-            _randWalkY = Mathf.CeilToInt(Mathf.Clamp(_randWalkY + Random.Range(-100f, 100f), _floorFloor, floorCeiling));
+            _randWalkY = Mathf.CeilToInt(Mathf.Clamp(_randWalkY + Random.Range(-1f, 1f), _floorFloor, floorCeiling));
 
             float lastCeilPos = _yPosCeil;
             _yPosCeil = _randWalkY +  (int)Mathf.Clamp(Mathf.Floor(Random.Range(headSpaceBuffer, - _floorFloor)), 0, _ceilCeil);
