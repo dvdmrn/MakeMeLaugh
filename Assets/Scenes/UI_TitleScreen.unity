@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.49098432, g: 0.29372996, b: 0.5959766, a: 1}
+  m_IndirectSpecularColor: {r: 0.49098337, g: 0.29372925, b: 0.5959753, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -365,7 +365,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95649653}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 3.836}
+  m_LocalPosition: {x: 0, y: 0, z: 3.877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -373,7 +373,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.883, y: 0.001}
+  m_AnchoredPosition: {x: 6.163, y: 0.001}
   m_SizeDelta: {x: 0.5668, y: 0.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &160868289 stripped
@@ -939,7 +939,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Pia
 
-    LastName'
+    Leo'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 900f11488c5403743847e5c3e98639e1, type: 2}
   m_sharedMaterial: {fileID: -6213224899978998406, guid: 900f11488c5403743847e5c3e98639e1, type: 2}
@@ -3430,7 +3430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e77d5c81ef57040a18a1a4e04d8cc654, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e77d5c81ef57040a18a1a4e04d8cc654, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3616,9 +3616,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40730a7e0fca6a94d88346b26da18e4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 342873486}
-  targetPosition: {x: 6.2, y: 0.5, z: 4}
-  targetRotation: {x: 0.6902263, y: -0.15307234, z: -0.1530195, w: -0.6904647}
+  targetObject: {fileID: 979380772}
+  targetPosition: {x: 5.04, y: 0.5, z: 3.56}
+  targetRotation: {x: 0, y: 0.21643963, z: 0, w: 0.976296}
   moveSpeed: 2
 --- !u!1 &1572137027
 GameObject:
@@ -3695,7 +3695,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Sandy
 
-    LastName'
+    Bannisse'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 900f11488c5403743847e5c3e98639e1, type: 2}
   m_sharedMaterial: {fileID: -6213224899978998406, guid: 900f11488c5403743847e5c3e98639e1, type: 2}
@@ -3903,7 +3903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e9c77f2b369f94b8fd3f4b9fe9ab80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickDistance: 0.1
+  clickDistance: 0.05
 --- !u!54 &1599921029
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3965,8 +3965,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 979380772}
-  targetPosition: {x: 4.5, y: 0.5, z: 4}
-  targetRotation: {x: 0, y: 0.21643963, z: 0, w: 0.976296}
+  targetPosition: {x: 5.04, y: 0.5, z: 3.56}
+  targetRotation: {x: 0, y: 0.21643962, z: 0, w: 0.976296}
   moveSpeed: 2
 --- !u!1 &1665118517
 GameObject:
@@ -5071,7 +5071,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'David
 
-    LastName'
+    Marino'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 900f11488c5403743847e5c3e98639e1, type: 2}
   m_sharedMaterial: {fileID: -6213224899978998406, guid: 900f11488c5403743847e5c3e98639e1, type: 2}
