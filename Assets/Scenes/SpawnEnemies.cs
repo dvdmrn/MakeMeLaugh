@@ -30,7 +30,7 @@ IEnumerator EnemyDrop() {
         enemyObj.transform.SetParent(transform);
         enemyObj.transform.position = new Vector3(100, 0,0);
         enemyObj.transform.localScale = new Vector3(1,1,1);
-        yield return new WaitForSeconds(Random.Range(3,6));
+        yield return new WaitForSeconds(Random.Range(9,12));
     }
 }
     // Update is called once per frame
